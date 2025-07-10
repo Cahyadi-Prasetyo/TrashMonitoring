@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Trash Can Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://img.icons8.com/color/96/000000/trash.png" alt="Trash Icon" class="icon">
+      <h1>Smart Trash Can Monitor</h1>
+    </header>
+    <section class="description">
+      <p>
+        Sistem ini memonitor kondisi tempat sampah pintar secara realtime. Anda dapat melihat status tutup, deteksi gas berbahaya, kelembapan, dan jarak sampah. Data diambil langsung dari perangkat IoT dan tersimpan di Firebase Realtime Database.
+      </p>
+    </section>
+    <section class="data-section">
+      <ul class="data-list">
+        <li>
+          <span class="label">Kelembapan</span>
+          <span class="data-value"><span id="humidity">-</span><span class="unit">%</span></span>
+        </li>
+        <li>
+          <span class="label">Gas MQ-2</span>
+          <span class="data-value"><span id="mq2Value">-</span></span>
+        </li>
+        <li>
+          <span class="label">Jarak</span>
+          <span class="data-value"><span id="distance">-</span><span class="unit">cm</span></span>
+        </li>
+        <li>
+          <span class="label">Status Tutup</span>
+          <span id="tutupStatus" class="status closed"><span class="status-icon">🔒</span>-</span>
+        </li>
+        <li>
+          <span class="label">Status Gas</span>
+          <span id="gasStatus" class="status gas-safe"><span class="status-icon">✅</span>-</span>
+        </li>
+      </ul>
+      <small class="note">Data realtime dari Firebase</small>
+    </section>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
